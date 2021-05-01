@@ -2,7 +2,7 @@
 
 ## Installation Instructions:
 
-# For server:
+### For server:
 
 1. Navigate to your main world directory (normally called 'world').
 2. Place 'FairyOrigin-v1.0.0.zip' into your 'datapacks' folder.
@@ -12,7 +12,7 @@
 6. Paste the Dropbox link into the 'resource-pack' value, and change the '0' at the end of the link to a '1'.
 7. Change 'require-resource-pack' value to 'true'.
 
-# For singleplayer:
+### For singleplayer:
 
 1. Navigate to your modpack directory.
 2. Place 'FairyOrigins-Resources-v1.0.0.zip' into your 'resourcepacks' directory.
