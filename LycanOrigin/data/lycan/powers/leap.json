@@ -1,0 +1,27 @@
+{
+	"type": "origins:active_self",
+	"name": "Wolf Leap",
+	"description": "With your powerful hind legs, you can leap long distances using your secondary ability key.",
+	"cooldown": 300,
+	"hud_render": {
+		"sprite_location": "lycan:textures/gui/resource_bar.png",
+		"bar_index": 9
+	},
+	"key": {
+		"key": "key.origins.secondary_active"
+	},
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:add_velocity",
+				"space": "local",
+				"z": 2
+			},
+			{
+				"type": "origins:play_sound",
+				"sound": "minecraft:entity.wolf.howl"
+			}
+		]
+	}
+}

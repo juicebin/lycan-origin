@@ -1,0 +1,136 @@
+{
+	"type": "origins:multiple",
+	"name": "Metallophobia",
+	"description": "Lycan's can not touch anything related to metal as they become weak when doing. This means they can't wear or touch anything related to metal.",
+	"item_use": {
+		"type": "origins:damage_over_time",
+		"interval": 10,
+		"damage": 1,
+		"damage_source": {
+			"name": "magic",
+			"unblockable": true
+		},
+		"condition": {
+			"type":"origins:or",
+			"conditions": [
+				{
+					"type": "origins:on_block",
+					"block_condition": {
+						"type": "origins:in_tag",
+						"tag": "lycan:metal_block"
+					}
+				},
+				{
+					"type":"origins:equipped_item",
+					"equipment_slot":"mainhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {							
+							"tag": "lycan:metal"
+						}
+					}
+				},
+				{
+					"type":"origins:equipped_item",
+					"equipment_slot":"offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"tag": "lycan:metal"
+						}
+					}
+				},
+				{
+					"type":"origins:equipped_item",
+					"equipment_slot":"head",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"tag": "lycan:metal_armor"
+						}
+					}
+				},
+				{
+					"type":"origins:equipped_item",
+					"equipment_slot":"chest",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"tag": "lycan:metal_armor"
+						}
+					}
+				},
+				{
+					"type":"origins:equipped_item",
+					"equipment_slot":"legs",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"tag": "lycan:metal_armor"
+						}
+					}
+				},
+				{
+					"type":"origins:equipped_item",
+					"equipment_slot":"feet",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"tag": "lycan:metal_armor"
+						}
+					}
+				}
+			]
+		}
+	},
+	"block_use": {
+		"type": "origins:prevent_block_use",
+		"block_condition": {
+			"type": "origins:in_tag",
+			"tag": "lycan:metal_block"
+		}
+	},
+	"on_attack": {
+		"type": "origins:modify_damage_taken",
+		"damage_condition": {
+			"type": "origins:attacker",
+			"entity_condition": {
+				"type": "origins:equipped_item",
+				"equipment_slot": "mainhand",
+				"item_condition": {
+					"type": "origins:ingredient",
+					"ingredient": {
+						"tag": "lycan:metal"
+					}
+				}
+			}
+		},
+		"modifier": {
+			"name": "Weak to metallic items.",
+			"operation": "addition",
+			"value": 3.0
+		}
+	},
+	"on_attack-1": {
+		"type": "origins:modify_damage_taken",
+		"damage_condition": {
+			"type": "origins:attacker",
+			"entity_condition": {
+				"type": "origins:equipped_item",
+				"equipment_slot": "mainhand",
+				"item_condition": {
+					"type": "origins:ingredient",
+					"ingredient": {
+						"tag": "lycan:metal"
+					},
+					"inverted": true
+				}
+			}
+		},
+		"modifier": {
+			"name": "Stronger against non-metallic items.",
+			"operation": "addition",
+			"value": -2.0
+		}
+	}
+}

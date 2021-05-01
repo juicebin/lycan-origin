@@ -1,0 +1,130 @@
+{
+	"type": "origins:multiple",
+	"name": "Nightly Rampage",
+	"description": "Your true form activates during the night-time. You can no longer sleep as your bloodlust calls. You get increased strength, movement speed, and grow into your wolf form.",
+	"day-time": {
+		"type": "origins:conditioned_attribute",
+		"condition": {
+			"type": "origins:daytime"
+		},
+		"modifiers": [
+			{
+				"attribute": "minecraft:generic.attack_damage",
+				"operation": "multiply_total",
+				"value": 1.8
+			},
+			{
+				"attribute": "minecraft:generic.movement_speed",
+				"operation": "multiply_total",
+				"value": 1.1
+			},
+			{
+				"attribute": "minecraft:generic.max_health",
+				"operation": "addition",
+				"value": 6.0
+			},
+			{
+				"attribute": "minecraft:generic.attack_knockback",
+				"operation": "multiply_total",
+				"value": 1.5
+			}
+		]
+	},
+	"night-time-1": {
+		"type": "origins:conditioned_attribute",
+		"condition": {
+			"type": "origins:daytime",
+			"inverted": true
+		},
+		"modifiers": [
+			{
+				"attribute": "minecraft:generic.attack_damage",
+				"operation": "multiply_total",
+				"value": 2.4
+			},
+			{
+				"attribute": "minecraft:generic.movement_speed",
+				"operation": "multiply_total",
+				"value": 1.5
+			},
+			{
+				"attribute": "minecraft:generic.max_health",
+				"operation": "addition",
+				"value": 12.0
+			},
+			{
+				"attribute": "minecraft:generic.attack_knockback",
+				"operation": "multiply_total",
+				"value": 2.0
+			}
+		]
+	},
+	"night-time-2": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"condition": {
+			"type": "origins:daytime"
+		},
+		"rising_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "scale set pehkui:base 1.25 @s"
+				},
+				{
+					"type": "origins:apply_effect",
+					"effects": [
+						{
+							"effect": "minecraft:slowness",
+							"duration": 200,
+							"amplifier": 3,
+							"show_particle": false,
+							"show_icon": true
+						},
+						{
+							"effect": "minecraft:weakness",
+							"duration": 200,
+							"amplifier": 1,
+							"show_particle": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"falling_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "scale set pehkui:base 1.65 @s"
+				},
+				{
+					"type": "origins:play_sound",
+					"sound": "minecraft:entity.wolf.howl"
+				}
+			]
+		}
+	},
+	"color": {
+		"type": "origins:model_color",
+		"condition": {
+			"type": "origins:daytime",
+			"inverted": true
+		},
+		"red": 150,
+		"green": 150,
+		"blue": 150
+	},
+	"prevent-sleep": {
+		"type": "origins:prevent_sleep"
+	},
+	"on-pick": {
+		"type": "origins:action_on_callback",
+		"entity_action_chosen": {
+			"type": "origins:execute_command",
+			"command": "scale set pehkui:base 1.25 @s"
+		}
+	}
+}

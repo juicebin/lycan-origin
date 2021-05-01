@@ -1,0 +1,19 @@
+{
+	"powers": [
+		"origins:hunger_over_time",
+		"origins:carnivore",
+		"origins:fall_immunity",
+		"lycan:lycan-vision",
+		"lycan:lycan-strength",
+		"lycan:brute",
+		"lycan:leap",
+		"lycan:metallophobia"
+	],
+	"icon": {
+		"item": "minecraft:bone",
+		"tag": "{CustomModelData:11832}"
+	},
+	"impact": 2,
+	"name": "Lycan",
+	"description": "As a Lycan, you're a carnivorous beast that gains strength during the night-time."
+}

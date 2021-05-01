@@ -1,0 +1,43 @@
+{
+	"type": "origins:multiple",
+	"name": "Lycan Vision",
+	"description": "Howl into the night as you gain the ability to see every living entity within a medium range.",
+	"active_self": {
+		"type": "origins:active_self",
+		"cooldown": 1200,
+		"hud_render": {
+			"sprite_location": "lycan:textures/gui/resource_bar.png",
+			"bar_index": 9
+		},
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:play_sound",
+					"sound": "minecraft:entity.wolf.howl"
+				},
+				{
+					"type": "origins:trigger_cooldown",
+					"power": "lycan:lycan-vision_cooldown"
+				}
+			]
+		}
+	},
+	"cooldown": {
+		"type": "origins:cooldown",
+		"cooldown": 500,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"entity_glow": {
+		"type": "origins:entity_glow",
+		"condition": {
+			"type": "origins:resource",
+			"resource": "lycan:lycan-vision_cooldown",
+			"comparison": "==",
+			"compare_to": 0,
+			"inverted": true
+		}
+	}
+}
