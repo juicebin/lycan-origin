@@ -1,5 +1,15 @@
 # Lycan Origin
 
+## Roadmap
+
+### Working On
+None for now!
+
+### To-Do
+- Red vignette during the night-time
+- Implement custom Lycan model
+- Custom 'Grace' enchantment to reduce metallophobia
+
 ## Installation Instructions:
 
 ### For server:
