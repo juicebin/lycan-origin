@@ -16,7 +16,10 @@ None for now!
 ### To-Do
 - Red vignette during the night-time
 - Implement custom Lycan model
-- Custom 'Grace' enchantment to reduce metallophobia
+- Custom 'Grace' enchantment to reduce iron damage
+- Lycan Hunter patrols (balancing)
+- Damage if iron is simply in the inventory (balancing)
+- Make skeletons afraid of the Lycan during rampage
 
 ## Installation Instructions:
 
