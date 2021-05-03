@@ -1,5 +1,13 @@
 # Lycan Origin
 
+## Update v1.1.0!
+- Added chainmail to the list of armor that causes damage
+- Made iron golems the Lycan's worst enemy!
+- Increased recovery time from 10 seconds to 60 seconds
+- Added the ability to change on command for 30 seconds
+- Changed diet to only allow raw meat during rampage
+- Enabled the increased damage to strictly bare-handed attacks
+
 ## Roadmap
 
 ### Working On
